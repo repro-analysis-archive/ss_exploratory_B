@@ -74,6 +74,14 @@ def reference(a, key):
     return json.load(open(os.path.join(a.locked, "results", "step5", "checks.json")))[key]
 
 
+def cb0_check(c, r, refname, key, kind):
+    """Exact comparison (as JSON text) of a B cell with its step-5 reference (plan §5)."""
+    same = {f: json.dumps(c[f]) == json.dumps(r[f]) for f in C0_FIELDS}
+    return dict(key=key, probe=kind, set=c["set"], reference=f"{refname}.{kind}", fields=same,
+                identical=all(same.values()), b_values={f: c[f] for f in C0_FIELDS},
+                reference_values={f: r[f] for f in C0_FIELDS})
+
+
 def stage_cb0(a):
     """Control C-B0 (plan §5): (a)/(b)-S1 must reproduce E3_site_278 and (b)-S3 E3_site_primary exactly."""
     from .b_probes import predict_from_rowprobs, recoverability, transport_rowprobs
@@ -92,11 +100,7 @@ def stage_cb0(a):
         c3 = cell(sets, "b", "S3", a.key, kind, s, p)
         cells.append(c3)
         for c, refname in ((c1, "E3_site_278"), (c3, "E3_site_primary")):
-            r = ref[refname][kind]
-            same = {f: json.dumps(c[f]) == json.dumps(r[f]) for f in C0_FIELDS}
-            checks_.append(dict(key=a.key, probe=kind, set=c["set"], reference=f"{refname}.{kind}", fields=same,
-                                identical=all(same.values()), b_values={f: c[f] for f in C0_FIELDS},
-                                reference_values={f: r[f] for f in C0_FIELDS}))
+            checks_.append(cb0_check(c, ref[refname][kind], refname, a.key, kind))
     passed = all(x["identical"] for x in checks_)
     json_write(os.path.join(a.out, f"cb0_{a.key}.json"), dict(passed=passed, checks=checks_, cells=cells,
                                                               rowprob_sha256={k: sha256_file(os.path.join(

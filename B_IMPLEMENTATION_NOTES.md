@@ -91,10 +91,12 @@
 * Two runs of a cell give identical BA, intervals and upper bound.
 * The names follow the plan: S1 → `E3:278:<key>-C:<probe>`; (b)-S3 → `E3:primary:<key>-C:<probe>`; otherwise `planB:<a|b>:<S2|S3>:<key>-C:<probe>`.
 
-**TB4. C-B0.**
-* Against the locked `e3_site` reference on PLACEHOLDER features, C-B0 passes.
+**TB4. C-B0.** *(Revised before any test was run; see the revision note below.)*
+* Against the locked reference on PLACEHOLDER features (linear probe), C-B0 passes.
 * Shifting one reference value by one ulp makes it fail.
-* Perturbing one feature value of one training case by 1e-6 makes it fail.
+* A perturbed input that changes at least one case-level prediction makes it fail. The perturbation: the fold-0 features of one held-out S1 case are replaced by those of a case from another centre.
+
+*Revision note.* The criterion first committed in `f6b4f39` required a 1e-6 change of one feature value to make C-B0 fail. C-B0 compares the balanced-accuracy-level numbers of step 5 (`ba`, the bounds, `n_cases`), which are the only step-5 E3 values committed. A change too small to alter any case's predicted site cannot change them. Integrity of the inputs themselves is checked separately, by the preflight's SHA-256 comparison with the committed step-5 manifest. The criterion was therefore corrected before any test was run.
 
 **TB5. Sensitivity draws.**
 * Deterministic for a given d; different for different d.
