@@ -1,0 +1,38 @@
+Exploratory analysis B (addendum): in which evaluation distribution does the E3-site judgement
+change?
+(SS arm, medical video causal gate, protocol DS203)
+
+File
+  EXPLORATORY_PLAN_B.md
+
+Provenance
+  Commit:   e1c27b4332af634c478ce7dc619eaf8ffc0acf0c
+            (git repository /srv/ss_exploratory_B;
+            author Hisashi Nakano <hisashi-nakano@nuhw.ac.jp>;
+            the plan was committed alone)
+  Time:     2026-10-19 10:00:49 +0900 (local git commit time; the OSF upload gives the independent
+            timestamp)
+  SHA-256:  21110349f47d8e3a300831d81b790f2c92e6aa749c4801f7308b2f8c2f9ea5e6
+            (the file in this package is byte-identical to the committed file; check with
+            `sha256sum EXPLORATORY_PLAN_B.md`)
+
+Summary
+  Without refitting the step-5 PCA / LEACE features, plan B evaluates site recoverability after the
+  protocol LEACE in three nested evaluation sets (278 cases, all steps; the 158 primary cases, all
+  steps; the 158 primary cases, analysis region), in a transport analysis (the step-5 E3 probe
+  evaluated on each set) and a recoverability analysis (the same probe specification refitted within
+  each set), each with the locked linear and MLP probes. It identifies where the E3-site judgement
+  changes, not why, and changes no E3 gate, §13 ceiling, family verdict or protocol result.
+
+Relation to the existing registration
+  This is an addendum to the existing registration https://osf.io/5c627 (exploratory analyses X1/X2,
+  plan commit b6d1cf7, embargoed until 2028-10-13). The existing registration and its files are not
+  modified.
+
+Timing and access statement
+  The plan was fixed and committed before any B result existed. While it was written, no step-6 or
+  step-7 result file and no X1/X2 output was opened (X1/X2 was running and had produced no result),
+  and B uses no step-6, step-7 or X quantity. Disclosure: the step-7 family-verdict summary had
+  already been generated and reported to the investigator earlier on 2026-10-19, in the same working
+  session. The only real-data quantities used for the plan are counts (set sizes, steps, centre,
+  state and fold counts) from the design files and the representation length arrays.
