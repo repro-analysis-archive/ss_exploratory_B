@@ -1,0 +1,29 @@
+# 2026-10-19 11:22:56 +0900 smoke run S; repository HEAD 9c54d0ab9dc1d6197c8f6e38a8a89bd689254456; step-5 interpreter; pytest under taskset 18,19; 2 threads
+============================= test session starts ==============================
+platform linux -- Python 3.11.14, pytest-9.0.3, pluggy-1.6.0 -- /home/user/.venvs/ss_extract/bin/python
+rootdir: /srv/ss_exploratory_B
+plugins: anyio-4.12.1, cov-7.1.0
+collecting ... collected 4 items / 3 deselected / 1 selected
+
+tests/test_b_runner.py::test_s_smoke_run_stop_resume S1 stopped after 299 s: stop requested (pid 2667301); resumable with the same launch command; runner exit 2; state stopped; stop reason 'interrupted by signal 15'; stages done ['phref P', 'cb0 P']
+S2 resumed: exit 0 in 367 s; state complete; stages ['phref P', 'cb0 P', 'main P', 'sens P', 'report']; record commit c7aebb23b94a parent 9c54d0ab9dc1 (launch 9c54d0ab9dc1); 8 files = records: True; tree clean: True; C-B0 passed True
+S3 relaunch after completion: exit 3 (refused: already complete)
+S4 stage timeline:
+   2026-10-19T11:22:59+09:00 phref P: start
+   2026-10-19T11:25:25+09:00 phref P: done
+   2026-10-19T11:25:25+09:00 cb0 P: start
+   2026-10-19T11:27:50+09:00 cb0 P: done
+   2026-10-19T11:27:50+09:00 main P: start
+   2026-10-19T11:27:58+09:00 main P: start
+   2026-10-19T11:29:09+09:00 main P: done
+   2026-10-19T11:29:09+09:00 sens P: start
+   2026-10-19T11:33:56+09:00 sens P: done
+   2026-10-19T11:33:56+09:00 report: start
+   2026-10-19T11:34:03+09:00 report: done
+S5 outputs and clone deleted
+PASSED
+
+================= 1 passed, 3 deselected in 666.12s (0:11:06) ==================
+	Command being timed: "/home/user/.venvs/ss_extract/bin/python -m pytest -p no:cacheprovider -s -v tests/test_b_runner.py -k smoke"
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 11:06.62
+	Maximum resident set size (kbytes): 1140840

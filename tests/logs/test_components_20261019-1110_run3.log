@@ -1,0 +1,19 @@
+# 2026-10-19 11:10:06 +0900 HEAD e54ec9eb2bbd3ec9a5b55d2071ab22faa0e86ffb (tests uncommitted; TB4 test on non-erased features, one-ulp shift towards +inf); step-5 interpreter; taskset 18,19; 2 threads
+============================= test session starts ==============================
+platform linux -- Python 3.11.14, pytest-9.0.3, pluggy-1.6.0 -- /home/user/.venvs/ss_extract/bin/python
+rootdir: /srv/ss_exploratory_B
+plugins: anyio-4.12.1, cov-7.1.0
+collecting ... collected 7 items
+
+tests/test_b_components.py::test_tb1_sets PASSED                         [ 14%]
+tests/test_b_components.py::test_tb2_transport_equals_locked_and_fits_once PASSED [ 28%]
+tests/test_b_components.py::test_tb2_refit_uses_only_own_set PASSED      [ 42%]
+tests/test_b_components.py::test_tb3_bootstrap_determinism_and_names PASSED [ 57%]
+tests/test_b_components.py::test_tb4_cb0_passes_and_detects PASSED       [ 71%]
+tests/test_b_components.py::test_tb5_subsample PASSED                    [ 85%]
+tests/test_b_components.py::test_tb6_report PASSED                       [100%]
+
+======================== 7 passed in 751.75s (0:12:31) =========================
+	Command being timed: "/home/user/.venvs/ss_extract/bin/python -m pytest -p no:cacheprovider -v tests/test_b_components.py"
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 12:32.55
+	Maximum resident set size (kbytes): 1122992

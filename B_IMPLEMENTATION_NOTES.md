@@ -124,3 +124,57 @@
   * relaunched: complete.
 * **Results:** C-B0 passed, and a record commit of exactly the 8 record files whose parent is the launch commit.
 * **Afterwards:** a relaunch is refused, and the outputs and the clone are deleted.
+
+## Test results (2026-10-19)
+
+The criteria were committed in `f6b4f39`; TB4 was revised in `e54ec9e`, before any test was run. The tests ran in the step-5 interpreter under `taskset -c 18,19` with 2 BLAS threads; peak RSS was 1.1 GB. Logs are in `tests/logs/`.
+
+| criteria | result | log |
+|---|---|---|
+| TB1–TB6 (`tests/test_b_components.py`) | run 3: 7 / 7 passed (12 min 32 s) | `test_components_20261019-1110_run3.log` |
+| TB7 (`tests/test_b_runner.py`) | 3 / 3 passed | `test_runner_fast_20261019-1122.log` |
+| S (smoke run) | passed (11 min 7 s) | `test_smoke_20261019-1122.log` |
+
+**Two earlier component runs failed in the TB4 test, both from errors in the test design, not in the B code.** No B code was changed.
+* **Run 1** (`…1042_run1_TB4-test-design-failure.log`):
+  * On the PLACEHOLDER features *after* LEACE, the linear S1 probe predicts the same site for every case.
+  * The test's perturbation (swapping one case's features) therefore cannot change any prediction.
+  * Fix: the TB4 test uses the non-erased PLACEHOLDER PCA features, on which the probe separates sites. The criterion is unchanged.
+* **Run 2** (`…1049_run2_TB4-ulp-direction-failure.log`):
+  * On those features the linear probe reaches BA = 1.0, and the one-ulp shift `nextafter(ba, 1.0)` leaves 1.0 unchanged.
+  * Fix: the shift goes towards +∞.
+* **In both runs,** C-B0 itself passed against the locked reference, and the other six tests passed.
+
+**Smoke run S** (PLACEHOLDER, key P, 2 draws, 2 threads on CPUs 18–19, `--ignore-x-running` while X1/X2 was running):
+* **Stop:** the run was stopped with `--stop` after 299 s, with stages `phref P` and `cb0 P` done. The runner exited with code 2, state "stopped".
+* **Resume:** the same command completed in 367 s.
+* **Record commit:** exactly the 8 record files, parent = the launch commit, tree clean; C-B0 passed.
+* **Relaunch:** refused.
+* **Clean-up:** the outputs and the clone were deleted.
+
+**Stage times (2 threads, PLACEHOLDER, one key):**
+
+| stage | time | content |
+|---|---:|---|
+| `phref` | 2 min 26 s | locked `e3_site` on S1 and S3 |
+| `cb0` | 2 min 25 s | S1 probes, linear + MLP, 45,957 rows; S3 refits |
+| `main` | 1 min 11 s | S2 refits, 26,126 rows |
+| `sens` | 4 min 47 s | 2 draws, i.e. 2 min 23 s per draw: 6 refits on 112 cases × 75 steps |
+| `report` | 7 s | |
+
+## Revised run-time estimate (real run)
+
+The plan (§8) estimated 0.5–0.8 h at 6 threads by scaling fit time linearly with rows. The smoke run shows that this underestimates the sensitivity part. Small fits do not shrink in proportion, because of the inner penalty CV and the MLP's early-stopping epochs. The real subsamples have exactly the PLACEHOLDER size (112 cases × 75 steps per set), so the measured time per draw applies directly.
+
+| part | basis | estimate |
+|---|---|---:|
+| preflight (hashing about 1.6 GB of step-5 files) | — | 1–3 min |
+| C-B0, 3 keys | PLACEHOLDER `cb0` × 104,662 / 45,957 rows | ≈ 15 min |
+| main cells, 3 keys | `main` × 70,763 / 26,126 rows | ≈ 10 min |
+| sensitivity, 20 draws × 3 keys | 2.4 min per draw and key | ≈ 2.4 h |
+| report | — | < 1 min |
+| **total, sequential** | | **≈ 2.5–3.5 h** |
+
+* **Range:** measured at 2 threads. The real run uses 6 threads, as the plan requires for C-B0; the PLACEHOLDER timings showed no speed-up from more BLAS threads, so the range is kept wide.
+* **Who launches:** it exceeds 1 hour and uses 6 threads, so the investigator launches it, after X1/X2 has finished.
+* **Not implemented:** the plan's optional parallel-keys mode (3 × 6 threads). The runner runs the keys one after another.
