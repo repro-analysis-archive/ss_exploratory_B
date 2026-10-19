@@ -1,0 +1,365 @@
+{
+ "P": {
+  "checks": [
+   {
+    "b_values": {
+     "ba": 0.25,
+     "hi_97p5": 0.25,
+     "lo_2p5": 0.25,
+     "n_cases": 278,
+     "upper_one_sided_95": 0.25
+    },
+    "fields": {
+     "ba": true,
+     "hi_97p5": true,
+     "lo_2p5": true,
+     "n_cases": true,
+     "upper_one_sided_95": true
+    },
+    "identical": true,
+    "key": "P",
+    "probe": "linear",
+    "reference": "E3_site_278.linear",
+    "reference_values": {
+     "ba": 0.25,
+     "hi_97p5": 0.25,
+     "lo_2p5": 0.25,
+     "n_cases": 278,
+     "upper_one_sided_95": 0.25
+    },
+    "set": "S1"
+   },
+   {
+    "b_values": {
+     "ba": 0.416124316859611,
+     "hi_97p5": 0.4810367022683199,
+     "lo_2p5": 0.35210350311453253,
+     "n_cases": 158,
+     "upper_one_sided_95": 0.47242022683199153
+    },
+    "fields": {
+     "ba": true,
+     "hi_97p5": true,
+     "lo_2p5": true,
+     "n_cases": true,
+     "upper_one_sided_95": true
+    },
+    "identical": true,
+    "key": "P",
+    "probe": "linear",
+    "reference": "E3_site_primary.linear",
+    "reference_values": {
+     "ba": 0.416124316859611,
+     "hi_97p5": 0.4810367022683199,
+     "lo_2p5": 0.35210350311453253,
+     "n_cases": 158,
+     "upper_one_sided_95": 0.47242022683199153
+    },
+    "set": "S3"
+   },
+   {
+    "b_values": {
+     "ba": 0.9568333345017842,
+     "hi_97p5": 0.981758144686937,
+     "lo_2p5": 0.926747944110657,
+     "n_cases": 278,
+     "upper_one_sided_95": 0.9792325380856568
+    },
+    "fields": {
+     "ba": true,
+     "hi_97p5": true,
+     "lo_2p5": true,
+     "n_cases": true,
+     "upper_one_sided_95": true
+    },
+    "identical": true,
+    "key": "P",
+    "probe": "mlp",
+    "reference": "E3_site_278.mlp",
+    "reference_values": {
+     "ba": 0.9568333345017842,
+     "hi_97p5": 0.981758144686937,
+     "lo_2p5": 0.926747944110657,
+     "n_cases": 278,
+     "upper_one_sided_95": 0.9792325380856568
+    },
+    "set": "S1"
+   },
+   {
+    "b_values": {
+     "ba": 0.7019634776987718,
+     "hi_97p5": 0.7630457777516602,
+     "lo_2p5": 0.6403769943292003,
+     "n_cases": 158,
+     "upper_one_sided_95": 0.7547454383851443
+    },
+    "fields": {
+     "ba": true,
+     "hi_97p5": true,
+     "lo_2p5": true,
+     "n_cases": true,
+     "upper_one_sided_95": true
+    },
+    "identical": true,
+    "key": "P",
+    "probe": "mlp",
+    "reference": "E3_site_primary.mlp",
+    "reference_values": {
+     "ba": 0.7019634776987718,
+     "hi_97p5": 0.7630457777516602,
+     "lo_2p5": 0.6403769943292003,
+     "n_cases": 158,
+     "upper_one_sided_95": 0.7547454383851443
+    },
+    "set": "S3"
+   }
+  ],
+  "passed": true,
+  "rowprob_sha256": {
+   "linear": "f207e5ccab68133528f384e607495042a3415b6d12d35cb1a3a6bbabe5d37ab5",
+   "mlp": "0ab13ff91b3e3a23b3de0205e1652490014f1d76fba365706f963a8a72dc4645"
+  }
+ },
+ "REF": {
+  "checks": [
+   {
+    "b_values": {
+     "ba": 0.25,
+     "hi_97p5": 0.25,
+     "lo_2p5": 0.25,
+     "n_cases": 278,
+     "upper_one_sided_95": 0.25
+    },
+    "fields": {
+     "ba": true,
+     "hi_97p5": true,
+     "lo_2p5": true,
+     "n_cases": true,
+     "upper_one_sided_95": true
+    },
+    "identical": true,
+    "key": "REF",
+    "probe": "linear",
+    "reference": "E3_site_278.linear",
+    "reference_values": {
+     "ba": 0.25,
+     "hi_97p5": 0.25,
+     "lo_2p5": 0.25,
+     "n_cases": 278,
+     "upper_one_sided_95": 0.25
+    },
+    "set": "S1"
+   },
+   {
+    "b_values": {
+     "ba": 0.4482135511547276,
+     "hi_97p5": 0.5176802976435328,
+     "lo_2p5": 0.3871048987776929,
+     "n_cases": 158,
+     "upper_one_sided_95": 0.505065706352471
+    },
+    "fields": {
+     "ba": true,
+     "hi_97p5": true,
+     "lo_2p5": true,
+     "n_cases": true,
+     "upper_one_sided_95": true
+    },
+    "identical": true,
+    "key": "REF",
+    "probe": "linear",
+    "reference": "E3_site_primary.linear",
+    "reference_values": {
+     "ba": 0.4482135511547276,
+     "hi_97p5": 0.5176802976435328,
+     "lo_2p5": 0.3871048987776929,
+     "n_cases": 158,
+     "upper_one_sided_95": 0.505065706352471
+    },
+    "set": "S3"
+   },
+   {
+    "b_values": {
+     "ba": 0.8630263519231474,
+     "hi_97p5": 0.9043072253168194,
+     "lo_2p5": 0.8180630703426012,
+     "n_cases": 278,
+     "upper_one_sided_95": 0.8995100625492735
+    },
+    "fields": {
+     "ba": true,
+     "hi_97p5": true,
+     "lo_2p5": true,
+     "n_cases": true,
+     "upper_one_sided_95": true
+    },
+    "identical": true,
+    "key": "REF",
+    "probe": "mlp",
+    "reference": "E3_site_278.mlp",
+    "reference_values": {
+     "ba": 0.8630263519231474,
+     "hi_97p5": 0.9043072253168194,
+     "lo_2p5": 0.8180630703426012,
+     "n_cases": 278,
+     "upper_one_sided_95": 0.8995100625492735
+    },
+    "set": "S1"
+   },
+   {
+    "b_values": {
+     "ba": 0.6196303696303695,
+     "hi_97p5": 0.6873256339248986,
+     "lo_2p5": 0.5434357921490275,
+     "n_cases": 158,
+     "upper_one_sided_95": 0.679523417758712
+    },
+    "fields": {
+     "ba": true,
+     "hi_97p5": true,
+     "lo_2p5": true,
+     "n_cases": true,
+     "upper_one_sided_95": true
+    },
+    "identical": true,
+    "key": "REF",
+    "probe": "mlp",
+    "reference": "E3_site_primary.mlp",
+    "reference_values": {
+     "ba": 0.6196303696303695,
+     "hi_97p5": 0.6873256339248986,
+     "lo_2p5": 0.5434357921490275,
+     "n_cases": 158,
+     "upper_one_sided_95": 0.679523417758712
+    },
+    "set": "S3"
+   }
+  ],
+  "passed": true,
+  "rowprob_sha256": {
+   "linear": "1573e57e9069ef6a9542eb42066893d3d45031cce0bcc580bde2fbf348fcdc32",
+   "mlp": "88fced5c3e30334ed56c12caa06a56a3dde668be25555ecbfc0d5f79f610f5d7"
+  }
+ },
+ "S": {
+  "checks": [
+   {
+    "b_values": {
+     "ba": 0.25,
+     "hi_97p5": 0.25,
+     "lo_2p5": 0.25,
+     "n_cases": 278,
+     "upper_one_sided_95": 0.25
+    },
+    "fields": {
+     "ba": true,
+     "hi_97p5": true,
+     "lo_2p5": true,
+     "n_cases": true,
+     "upper_one_sided_95": true
+    },
+    "identical": true,
+    "key": "S",
+    "probe": "linear",
+    "reference": "E3_site_278.linear",
+    "reference_values": {
+     "ba": 0.25,
+     "hi_97p5": 0.25,
+     "lo_2p5": 0.25,
+     "n_cases": 278,
+     "upper_one_sided_95": 0.25
+    },
+    "set": "S1"
+   },
+   {
+    "b_values": {
+     "ba": 0.3932942057942058,
+     "hi_97p5": 0.44438374125874114,
+     "lo_2p5": 0.3460804820179821,
+     "n_cases": 158,
+     "upper_one_sided_95": 0.4354458041958042
+    },
+    "fields": {
+     "ba": true,
+     "hi_97p5": true,
+     "lo_2p5": true,
+     "n_cases": true,
+     "upper_one_sided_95": true
+    },
+    "identical": true,
+    "key": "S",
+    "probe": "linear",
+    "reference": "E3_site_primary.linear",
+    "reference_values": {
+     "ba": 0.3932942057942058,
+     "hi_97p5": 0.44438374125874114,
+     "lo_2p5": 0.3460804820179821,
+     "n_cases": 158,
+     "upper_one_sided_95": 0.4354458041958042
+    },
+    "set": "S3"
+   },
+   {
+    "b_values": {
+     "ba": 0.4947627634235084,
+     "hi_97p5": 0.5354999772152077,
+     "lo_2p5": 0.455607308192944,
+     "n_cases": 278,
+     "upper_one_sided_95": 0.5312818376652602
+    },
+    "fields": {
+     "ba": true,
+     "hi_97p5": true,
+     "lo_2p5": true,
+     "n_cases": true,
+     "upper_one_sided_95": true
+    },
+    "identical": true,
+    "key": "S",
+    "probe": "mlp",
+    "reference": "E3_site_278.mlp",
+    "reference_values": {
+     "ba": 0.4947627634235084,
+     "hi_97p5": 0.5354999772152077,
+     "lo_2p5": 0.455607308192944,
+     "n_cases": 278,
+     "upper_one_sided_95": 0.5312818376652602
+    },
+    "set": "S1"
+   },
+   {
+    "b_values": {
+     "ba": 0.42754671798789445,
+     "hi_97p5": 0.4891937107010636,
+     "lo_2p5": 0.36814784480225654,
+     "n_cases": 158,
+     "upper_one_sided_95": 0.476329552800141
+    },
+    "fields": {
+     "ba": true,
+     "hi_97p5": true,
+     "lo_2p5": true,
+     "n_cases": true,
+     "upper_one_sided_95": true
+    },
+    "identical": true,
+    "key": "S",
+    "probe": "mlp",
+    "reference": "E3_site_primary.mlp",
+    "reference_values": {
+     "ba": 0.42754671798789445,
+     "hi_97p5": 0.4891937107010636,
+     "lo_2p5": 0.36814784480225654,
+     "n_cases": 158,
+     "upper_one_sided_95": 0.476329552800141
+    },
+    "set": "S3"
+   }
+  ],
+  "passed": true,
+  "rowprob_sha256": {
+   "linear": "fd9d91a5159d814fc0f94de968e05d3393c264dd250e14b4caec4835d377bacb",
+   "mlp": "3905139c856735b24367070a519e76a6fe25d427a0de56308038eb0322c84a0f"
+  }
+ }
+}

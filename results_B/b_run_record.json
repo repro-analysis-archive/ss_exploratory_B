@@ -1,0 +1,74 @@
+{
+ "inputs_sha256": {
+  "checks.json": "ea4cfebf673cd94ef2904a0a5b5fe99b44619985ce5f022af38eac010a26b6e4",
+  "reps_full_P.npz": "2d547d616163561a1c2088113a3bb1b06c884c463d96ef5931d23671a5b7540e",
+  "reps_full_REF.npz": "0851ac8de7d42ca5d040f974eba2ef96391e644503d200d887ad1e888ef2fd90",
+  "reps_full_S.npz": "23436de7de10608c6ba8bc18e6fd045e3c79c497f92687d5cbffa7d3153c6045"
+ },
+ "launch_commit": "c7354edc5b9d5e119b612a08534c22e647e8e05d",
+ "locked_snapshot": "2880d736c75fbaaed8abbce233e82229b65e4c2f",
+ "osf": "https://osf.io/g9ymw",
+ "placeholder": false,
+ "plan_commit": "e1c27b4332af634c478ce7dc619eaf8ffc0acf0c",
+ "rowprob_sha256": {
+  "rowprob_P_linear.npz": "f207e5ccab68133528f384e607495042a3415b6d12d35cb1a3a6bbabe5d37ab5",
+  "rowprob_P_mlp.npz": "0ab13ff91b3e3a23b3de0205e1652490014f1d76fba365706f963a8a72dc4645",
+  "rowprob_REF_linear.npz": "1573e57e9069ef6a9542eb42066893d3d45031cce0bcc580bde2fbf348fcdc32",
+  "rowprob_REF_mlp.npz": "88fced5c3e30334ed56c12caa06a56a3dde668be25555ecbfc0d5f79f610f5d7",
+  "rowprob_S_linear.npz": "fd9d91a5159d814fc0f94de968e05d3393c264dd250e14b4caec4835d377bacb",
+  "rowprob_S_mlp.npz": "3905139c856735b24367070a519e76a6fe25d427a0de56308038eb0322c84a0f"
+ },
+ "settings": {
+  "cpus": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5
+  ],
+  "draws": 20,
+  "keys": [
+   "P",
+   "S",
+   "REF"
+  ],
+  "main_commit": "2880d736c75fbaaed8abbce233e82229b65e4c2f",
+  "main_head_at_launch": "2880d736c75fbaaed8abbce233e82229b65e4c2f",
+  "main_repo": "/home/user/projects/medical_video_causal_gate",
+  "memory_guard": {
+   "interval_s": 15,
+   "mem_available_min_fraction": 0.05,
+   "psi_full_avg60_max": 10.0,
+   "strikes": 3,
+   "swap_out_rule": null
+  },
+  "sdr_commit": "af56777e0f52b5c350dd7ba557d55b2394cbd4bf",
+  "ss_benchmark_files_differing_from_sdr_commit": [
+   "ss_benchmark/models/prim_caformer.py"
+  ],
+  "stage_python": "/home/user/.venvs/ss_extract/bin/python",
+  "stage_python_versions": {
+   "numpy": "2.3.5",
+   "pandas": "3.0.1",
+   "python": "3.11.14",
+   "scipy": "1.17.0",
+   "sklearn": "1.6.1"
+  },
+  "step5_dir": "/media/user/LaCie/medvideo_gate/ss_step4_5/step5",
+  "threads": 6,
+  "x_processes_at_launch": []
+ },
+ "stages_done": [
+  "cb0 P",
+  "cb0 S",
+  "cb0 REF",
+  "main P",
+  "main S",
+  "main REF",
+  "sens P",
+  "sens S",
+  "sens REF",
+  "report"
+ ]
+}

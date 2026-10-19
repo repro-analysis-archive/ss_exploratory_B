@@ -1,0 +1,37 @@
+key,analysis,probe,pair,exceeds_x,exceeds_y,statement
+P,a,linear,S1->S2,False,False,the judgement does not change between S1 and S2
+P,a,linear,S2->S3,False,False,the judgement does not change between S2 and S3
+P,a,linear,S1->S3,False,False,the judgement does not change between S1 and S3
+P,a,mlp,S1->S2,True,True,the judgement does not change between S1 and S2
+P,a,mlp,S2->S3,True,True,the judgement does not change between S2 and S3
+P,a,mlp,S1->S3,True,True,the judgement does not change between S1 and S3
+P,b,linear,S1->S2,False,False,the judgement does not change between S1 and S2
+P,b,linear,S2->S3,False,True,the judgement changes between S2 and S3
+P,b,linear,S1->S3,False,True,the judgement changes between S1 and S3
+P,b,mlp,S1->S2,True,True,the judgement does not change between S1 and S2
+P,b,mlp,S2->S3,True,True,the judgement does not change between S2 and S3
+P,b,mlp,S1->S3,True,True,the judgement does not change between S1 and S3
+S,a,linear,S1->S2,False,False,the judgement does not change between S1 and S2
+S,a,linear,S2->S3,False,False,the judgement does not change between S2 and S3
+S,a,linear,S1->S3,False,False,the judgement does not change between S1 and S3
+S,a,mlp,S1->S2,True,True,the judgement does not change between S1 and S2
+S,a,mlp,S2->S3,True,True,the judgement does not change between S2 and S3
+S,a,mlp,S1->S3,True,True,the judgement does not change between S1 and S3
+S,b,linear,S1->S2,False,False,the judgement does not change between S1 and S2
+S,b,linear,S2->S3,False,True,the judgement changes between S2 and S3
+S,b,linear,S1->S3,False,True,the judgement changes between S1 and S3
+S,b,mlp,S1->S2,True,True,the judgement does not change between S1 and S2
+S,b,mlp,S2->S3,True,True,the judgement does not change between S2 and S3
+S,b,mlp,S1->S3,True,True,the judgement does not change between S1 and S3
+REF,a,linear,S1->S2,False,False,the judgement does not change between S1 and S2
+REF,a,linear,S2->S3,False,False,the judgement does not change between S2 and S3
+REF,a,linear,S1->S3,False,False,the judgement does not change between S1 and S3
+REF,a,mlp,S1->S2,True,True,the judgement does not change between S1 and S2
+REF,a,mlp,S2->S3,True,True,the judgement does not change between S2 and S3
+REF,a,mlp,S1->S3,True,True,the judgement does not change between S1 and S3
+REF,b,linear,S1->S2,False,False,the judgement does not change between S1 and S2
+REF,b,linear,S2->S3,False,True,the judgement changes between S2 and S3
+REF,b,linear,S1->S3,False,True,the judgement changes between S1 and S3
+REF,b,mlp,S1->S2,True,True,the judgement does not change between S1 and S2
+REF,b,mlp,S2->S3,True,True,the judgement does not change between S2 and S3
+REF,b,mlp,S1->S3,True,True,the judgement does not change between S1 and S3
